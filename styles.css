@@ -1,13 +1,26 @@
 body{
-    margin: 0% ;
+    margin: 0%;
     padding: 0%;
 }
 
 header{
-    width:100%;
-    height: 50px;
+    width:98%;
+    height: 2%;
     padding: 1%;
     display: flex;
     align-items: center;
     background-color: lightslategray;
+}
+
+.bouton_recherche{
+    margin-inline: 1%;
+    padding : 0.25%;
+}
+
+.barre_recherche{
+    padding: 0.25%;
+}
+
+.espace_resultats{
+    padding: 2%;
 }
