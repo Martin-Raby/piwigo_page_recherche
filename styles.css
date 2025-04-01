@@ -24,3 +24,9 @@ header{
 .espace_resultats{
     padding: 2%;
 }
+
+img{
+    max-height: 30vh;
+    height: 100%;
+    width: auto;
+}
