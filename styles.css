@@ -12,17 +12,38 @@ header{
     background-color: lightslategray;
 }
 
+.choix_tri{
+    background-color: white;
+    padding: 0.40%;
+    padding-inline: 0.5%;
+    border-radius: 25px;
+    font-family:Arial;
+    white-space: nowrap;
+}
+
+.container_choix_tri{
+    padding-inline: 1%;
+}
+
 .bouton_recherche{
-    margin-inline: 1%;
+    margin: 0.1%;
+    margin-right: 10%;
     padding : 0.25%;
+    background-color: white;
+    border-radius: 25px;
+    font-family:Arial;
 }
 
 .barre_recherche{
     padding: 0.25%;
+    background-color: white;
+    border-radius: 25px;
+    font-family:Arial;
 }
 
 .espace_resultats{
     padding: 2%;
+    font-family: 'Courier New';
 }
 
 img{

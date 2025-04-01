@@ -15,6 +15,18 @@
     <header>
         <input type="search" class="barre_recherche"/>
         <button class="bouton_recherche">Rechercher</button>
+
+        <p class="choix_tri container_choix_tri">
+            <label for="choix_tri" class="choix_tri">Trier par</label>
+            <select name="choix_tri" class="choix_tri">
+                <option value="name">Nom</option>
+                <option value="hit">Nombre de vues</option>
+                <option value="date_available">Date de mise en ligne - chronologique</option>
+                <option value="!date_available">Date de mise en ligne - antichronologique</option>
+                <option value="date_creation">Date de création - chronologique</option>
+                <option value="!date_creation">Date de création - antichronologique</option>
+            </select>
+        </p>
     </header>
     <div class="espace_resultats">
         
