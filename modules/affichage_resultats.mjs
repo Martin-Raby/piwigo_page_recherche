@@ -1,3 +1,4 @@
+import { requete_api } from "./requete.mjs";
 "use strict";
 
 function defaut () {
