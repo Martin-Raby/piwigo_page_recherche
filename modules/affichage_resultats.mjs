@@ -1,4 +1,4 @@
-import { requete_api } from "./requete.mjs";
+import { recherche_api } from "./requete.mjs";
 "use strict";
 
 async function affichage_resultats (texte, donnee) {
@@ -13,15 +13,20 @@ async function affichage_resultats (texte, donnee) {
     }
 
     let contenu = ""
-    await requete_api(texte).then( (resultat) => {
-        const images = tri_images(resultat.result.images, donnee)
-        
-        for (let i = 0; i < images.length; i++){
-            contenu += `<img src="${images[i].element_url}" alt="${images[i].name}"/>`
+
+    try{await recherche_api(texte).then( (resultat) => {
+            const images = tri_images(resultat.result.images, donnee)
+            
+            for (let i = 0; i < images.length; i++){
+                contenu += `<img src="${images[i].element_url}" alt="${images[i].name}"/>`
+            }
+        })
+        if (contenu == ""){
+            contenu = "<p>Aucun résultat</p>"
         }
-    })
-    if (contenu == ""){
-        contenu = "<p>Aucun résultat</p>"
+    }
+    catch{
+            contenu = "<p>Impossible de rechercher dans ce serveur Piwigo</p>"
     }
     $("div.espace_resultats").html(contenu)
 }

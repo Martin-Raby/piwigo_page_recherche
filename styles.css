@@ -4,49 +4,38 @@ body{
 }
 
 header{
-    width:98%;
-    height: 2%;
-    padding: 1%;
+    padding-inline: 10vw;
+    padding-block: 3vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: lightslategray;
 }
 
-.choix_tri{
+.container{
     background-color: white;
-    padding: 0.40%;
-    padding-inline: 0.5%;
+    border-radius: 25px;
+    padding: 0.5vw;
+    padding-inline: 1vw;
+    display: flex;
+}
+
+.header_element{
+    background-color: white;
+    padding: 0.40vw;
+    padding-inline: 0.5vw;
     border-radius: 25px;
     font-family:Arial;
     white-space: nowrap;
 }
 
-.container_choix_tri{
-    padding-inline: 1%;
-}
-
-.bouton_recherche{
-    margin: 0.1%;
-    margin-right: 10%;
-    padding : 0.25%;
-    background-color: white;
-    border-radius: 25px;
-    font-family:Arial;
-}
-
-.barre_recherche{
-    padding: 0.25%;
-    background-color: white;
-    border-radius: 25px;
-    font-family:Arial;
-}
-
 .espace_resultats{
-    padding: 2%;
+    padding: 2vw;
     font-family: 'Courier New';
 }
 
 img{
+    padding: 0.5vw;
     max-height: 30vh;
     height: 100%;
     width: auto;
