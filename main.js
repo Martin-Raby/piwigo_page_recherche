@@ -8,4 +8,5 @@ window.addEventListener("DOMContentLoaded", function(){
             await affichage_resultats( $("input.barre_recherche").val(), $("select.choix_tri").val() )
         }
     });
+    $("select.choix_tri").on("change", async function(){await affichage_resultats( $("input.barre_recherche").val(), $("select.choix_tri").val()) });
 })
