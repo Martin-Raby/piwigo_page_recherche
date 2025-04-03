@@ -1,7 +1,7 @@
 "use strict";
 
 async function recherche_api (recherche = " ",page = 0) {
-    let corps = $("input.barre_serveur").val() + `ws.php?format=json&method=pwg.images.search&query=${recherche}&per_page=100&page=${page}`
+    let corps = "https://" + $("input.barre_serveur").val() + `/ws.php?format=json&method=pwg.images.search&query=${recherche}&per_page=100&page=${page}`
 
     try{
         const requete = await fetch(corps)
@@ -18,7 +18,7 @@ async function recherche_api (recherche = " ",page = 0) {
 }
 
 async function tag_api() {
-    let corps = $("input.barre_serveur").val() + `ws.php?format=json&method=pwg.tags.getList`
+    let corps = "https://" + $("input.barre_serveur").val() + `/ws.php?format=json&method=pwg.tags.getList`
 
     try{
         const requete = await fetch(corps)
@@ -35,7 +35,7 @@ async function tag_api() {
 }
 
 async function recherche_tag(tags) {
-    let corps = $("input.barre_serveur").val() + `ws.php?format=json&method=pwg.tags.getImages&tag_url_name=${tags.join("&")}`
+    let corps = "https://" + $("input.barre_serveur").val() + `/ws.php?format=json&method=pwg.tags.getImages&tag_url_name=${tags.join("&")}`
 
     if (tags[0] == ""){
         console.log("Le premier tag étant null, on ne recherche pas")

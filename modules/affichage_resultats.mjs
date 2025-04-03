@@ -31,7 +31,7 @@ async function affichage_resultats (texte, donnee, tags) {
     }
 
     catch(error){
-        console.log(error)
+            console.log(error)
             contenu = "<p>Impossible de rechercher dans ce serveur Piwigo</p>"
     }
     $("div.espace_resultats").html(contenu)

@@ -19,6 +19,7 @@ header{
     padding: 0.5vw;
     padding-inline: 1vw;
     display: flex;
+    align-items: center;
 }
 
 .header_element{

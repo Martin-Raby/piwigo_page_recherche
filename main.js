@@ -16,5 +16,6 @@ window.addEventListener("DOMContentLoaded", function(){
     });
     $("select.choix_tri").on("change", async function(){rechercher()});
     $("select.choix_tag").on("change", async function(){rechercher()});
-    populate_tags()
+    $("input.barre_serveur").on("change", function(){populate_tags()});
+    populate_tags();
 })
