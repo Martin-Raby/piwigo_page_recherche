@@ -3,8 +3,8 @@ import { tag_api } from "./requete.mjs"
 
 async function populate_tags() {
     let liste_tags = (await tag_api()).result.tags;
-    $("select.choix_tag").html(`<option value="None">Aucun tag</option>`)
-    
+    $("select.choix_tag").html(`<option value="">Aucun tag</option>`)
+
     for (let i = 0; i < liste_tags.length; i++){
 
         $("select.choix_tag").append($('<option>', {
