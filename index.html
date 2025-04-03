@@ -13,28 +13,32 @@
 <body>
    
     <header class="grid">
-        <div class="container_recherche container">
-            <input type="search" class="barre_recherche  header_element"/>
-            <button class="bouton_recherche  header_element">Rechercher</button>
-        </div>
+            <div class="container_recherche container">
+                <input type="search" class="barre_recherche  header_element"/>
+                <button class="bouton_recherche  header_element">Rechercher</button>
+            </div>
 
-        <div class="choix_tri container_choix_tri container">
-            <label for="choix_tri" class="choix_tri  header_element">Trier par</label>
-            <select name="choix_tri" class="choix_tri  header_element">
-                <option value="name">Nom</option>
-                <option value="hit">Nombre de vues</option>
-                <option value="date_available">Date de mise en ligne - chronologique</option>
-                <option value="!date_available">Date de mise en ligne - antichronologique</option>
-                <option value="date_creation">Date de création - chronologique</option>
-                <option value="!date_creation">Date de création - antichronologique</option>
-            </select>
-        </div>
+            <div class="choix_tri container_choix_tri container">
+                <label for="choix_tri" class="choix_tri  header_element">Trier par :</label>
+                <select name="choix_tri" class="choix_tri  header_element">
+                    <option value="name">Nom</option>
+                    <option value="hit">Nombre de vues</option>
+                    <option value="date_available">Date de mise en ligne - chronologique</option>
+                    <option value="!date_available">Date de mise en ligne - antichronologique</option>
+                    <option value="date_creation">Date de création - chronologique</option>
+                    <option value="!date_creation">Date de création - antichronologique</option>
+                </select>
+            </div>
 
-        <div class="container_changement_serveur container">
-            <label for="barre_serveur" class="label_serveur  header_element">Serveur piwigo : </label>
-            <input type="search" name="barre_serveur" class="barre_serveur  header_element" value="https://piwigo.la-taniere-solidaire.gay/">
-        </div>
+            <div class="container_changement_serveur container">
+                <label for="barre_serveur" class="label_serveur  header_element">Serveur piwigo : </label>
+                <input type="search" name="barre_serveur" class="barre_serveur  header_element" value="https://piwigo.la-taniere-solidaire.gay/">
+            </div>
 
+        <div class="container_tag container">
+            <label for="choix_tag" class="label_choix_tag header_element">Tag souhaité : </label>
+            <select name="choix_tag" class="choix_tag  header_element"></select>
+        </div>
     </header>
     <div class="espace_resultats">
     </div>
