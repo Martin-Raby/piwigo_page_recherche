@@ -45,7 +45,7 @@ async function tri_images (images, donnee = "name", tags){
     */
     
     let images_taggues = images
-    if (tags[0] != ""){
+    if (tags[0] != "" || tags.length > 1){
         await recherche_tag(tags).then( (resultat) => {
             let concerne = resultat.result.images
             images_taggues = []

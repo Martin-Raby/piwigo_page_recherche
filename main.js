@@ -3,7 +3,7 @@ import { populate_tags } from "./modules/gestion_tags.mjs";
 "use strict";
 
 async function rechercher () {
-    await affichage_resultats( $("input.barre_recherche").val(), $("select.choix_tri").val(), [$("select.choix_tag").val()])
+    await affichage_resultats( $("input.barre_recherche").val(), $("select.choix_tri").val(), $("select.choix_tag").val())
 }
 
 window.addEventListener("DOMContentLoaded", function(){

@@ -35,12 +35,18 @@ async function tag_api() {
 }
 
 async function recherche_tag(tags) {
-    let corps = "https://" + $("input.barre_serveur").val() + `/ws.php?format=json&method=pwg.tags.getImages&tag_url_name=${tags.join("&")}`
-
-    if (tags[0] == ""){
-        console.log("Le premier tag étant null, on ne recherche pas")
+    let good_tags = tags
+    if (tags[0] == "" && tags.length == 1){
+        console.log("Aucun tag n'a été sélectionné")
         return
     }
+    
+    if (good_tags[0] == ""){
+        good_tags.splice(0,1)
+    }
+    console.log(good_tags.join("&"))
+
+    let corps = "https://" + $("input.barre_serveur").val() + `/ws.php?format=json&method=pwg.tags.getImages&tag_mode_and=true&tag_url_name[]=${good_tags.join("&tag_url_name[]=")}`
 
     try{
         const requete = await fetch(corps)
