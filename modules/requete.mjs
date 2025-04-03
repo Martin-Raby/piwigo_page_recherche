@@ -36,8 +36,7 @@ async function tag_api() {
 
 async function recherche_tag(tags) {
     let good_tags = tags
-    if (tags[0] == "" && tags.length == 1){
-        console.log("Aucun tag n'a été sélectionné")
+    if (tags.length == 0){
         return
     }
     

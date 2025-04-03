@@ -47,10 +47,12 @@ async function tri_images (images, donnee = "name", tags){
     let images_taggues = images
     if (tags[0] != "" || tags.length > 1){
         await recherche_tag(tags).then( (resultat) => {
-            let concerne = resultat.result.images
-            images_taggues = []
-            for (let i = 0; i < concerne.length; i++){
-                images_taggues = images_taggues.concat((images.filter(e => e.id == concerne[i].id)))
+            if (resultat !== undefined){
+                let concerne = resultat.result.images
+                images_taggues = []
+                for (let i = 0; i < concerne.length; i++){
+                    images_taggues = images_taggues.concat((images.filter(e => e.id == concerne[i].id)))
+                }
             }
         })
     }
