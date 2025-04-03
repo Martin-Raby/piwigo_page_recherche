@@ -1,7 +1,7 @@
 import { recherche_api, recherche_tag } from "./requete.mjs";
 "use strict";
 
-async function affichage_resultats (texte, donnee, tags) {
+async function affichage_resultats (texte, donnee, tags, exclusifs) {
     /*
     Entrée : texte une chaîne de caractères
     Sortie : rien
@@ -17,7 +17,7 @@ async function affichage_resultats (texte, donnee, tags) {
     try{await recherche_api(texte).then( async (resultat) => {
 
             let images
-            await tri_images(resultat.result.images, donnee, tags).then(
+            await tri_images(resultat.result.images, donnee, tags, exclusifs).then(
                 (resultat) => { images = resultat}
             )
             
@@ -37,7 +37,7 @@ async function affichage_resultats (texte, donnee, tags) {
     $("div.espace_resultats").html(contenu)
 }
 
-async function tri_images (images, donnee = "name", tags){
+async function tri_images (images, donnee = "name", tags, exclusifs){
     /*
     Entrée : une liste d'images, une chainte de caractères et une liste de chaines de caractères
     Sortie : Une liste d'images
@@ -46,7 +46,7 @@ async function tri_images (images, donnee = "name", tags){
     
     let images_taggues = images
     if (tags[0] != "" || tags.length > 1){
-        await recherche_tag(tags).then( (resultat) => {
+        await recherche_tag(tags, exclusifs).then( (resultat) => {
             if (resultat !== undefined){
                 let concerne = resultat.result.images
                 images_taggues = []

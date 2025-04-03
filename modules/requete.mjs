@@ -34,7 +34,7 @@ async function tag_api() {
     }
 }
 
-async function recherche_tag(tags) {
+async function recherche_tag(tags, exclusifs) {
     let good_tags = tags
     if (tags.length == 0){
         return
@@ -43,9 +43,8 @@ async function recherche_tag(tags) {
     if (good_tags[0] == ""){
         good_tags.splice(0,1)
     }
-    console.log(good_tags.join("&"))
 
-    let corps = "https://" + $("input.barre_serveur").val() + `/ws.php?format=json&method=pwg.tags.getImages&tag_mode_and=true&tag_url_name[]=${good_tags.join("&tag_url_name[]=")}`
+    let corps = "https://" + $("input.barre_serveur").val() + `/ws.php?format=json&method=pwg.tags.getImages&tag_mode_and=${exclusifs}&tag_url_name[]=${good_tags.join("&tag_url_name[]=")}`
 
     try{
         const requete = await fetch(corps)

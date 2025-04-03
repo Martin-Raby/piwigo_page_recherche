@@ -3,7 +3,7 @@ import { populate_tags } from "./modules/gestion_tags.mjs";
 "use strict";
 
 async function rechercher () {
-    await affichage_resultats( $("input.barre_recherche").val(), $("select.choix_tri").val(), $("select.choix_tag").val())
+    await affichage_resultats( $("input.barre_recherche").val(), $("select.choix_tri").val(), $("select.choix_tag").val(), $('#tag_option').is(":checked"))
 }
 
 window.addEventListener("DOMContentLoaded", function(){
@@ -17,5 +17,6 @@ window.addEventListener("DOMContentLoaded", function(){
     $("select.choix_tri").on("change", async function(){rechercher()});
     $("select.choix_tag").on("change", async function(){rechercher()});
     $("input.barre_serveur").on("change", function(){populate_tags()});
+    $('#tag_option').on("change", async function(){rechercher()});
     populate_tags();
 })
